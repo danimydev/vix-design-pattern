@@ -3,23 +3,30 @@
     /* Base Options: */
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "target": "es2022",
+    "target": "ES2022",
+    "verbatimModuleSyntax": false,
     "allowJs": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
-    "isolatedModules": true,
-    "verbatimModuleSyntax": true,
-
     /* Strictness */
     "strict": true,
     "noUncheckedIndexedAccess": true,
-    "noImplicitOverride": true,
-
     /* If NOT transpiling with TypeScript: */
-    "module": "preserve",
+    "moduleResolution": "Bundler",
+    "module": "ESNext",
     "noEmit": true,
-
     /* If your code doesn't run in the DOM: */
-    "lib": ["es2022"]
-  }
+    "lib": ["es2022"],
+    /* Extend global types */
+    "types": ["node", "vitest/globals"],
+    /* Aliases */
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "rootDir": "./"
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["dist", "node_modules"]
 }
